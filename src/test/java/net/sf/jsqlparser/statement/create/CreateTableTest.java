@@ -641,4 +641,15 @@ public class CreateTableTest {
         String sql = "CREATE TABLE test (startdate DATE) DISABLE ROW MOVEMENT AS SELECT 1 FROM dual";
         assertSqlCanBeParsedAndDeparsed(sql);
     }
+
+    @Test
+    public void testCreateTableWithDefault() throws JSQLParserException {
+        // Cannot parse statement: Encountered unexpected token: \"nextval\" \"NEXTVAL\"
+        String createTableWithDefaults = "CREATE TABLE myschema.tableName ("
+                + "id bigint NOT NULL DEFAULT nextval('myschema.mysequence'::regclass), " +
+                "bool_col boolean NOT NULL DEFAULT false, " +
+                "int_col integer NOT NULL DEFAULT 0)";
+        assertSqlCanBeParsedAndDeparsed(createTableWithDefaults);
+    }
+
 }
