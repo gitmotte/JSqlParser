@@ -67,6 +67,8 @@ Also I would like to know about needed examples or documentation stuff.
 
 ## Extensions in the latest SNAPSHOT version 4.0
 
+* support for **CREATE OR REPLACE** for create function statements
+* support for JDBCParameter for interval expressions
 * support for **xmlserialize(xmlagg(xmltext( <column> ) ORDER BY <list of columns>) as <column data type> )** expression
 * first try to support conditions as select items: **SELECT a < b**
 * support for **DROP SEQUENCE**
@@ -79,6 +81,7 @@ Also I would like to know about needed examples or documentation stuff.
 * allow variable assignments in select statements in different positions
 * allow keywords as object names **of**, **exclude**
 * multi part **Table** name gets automatically resized if the last item is removed
+* first version of a validation framework for sql statements (thx to @gitmotte)
 
 ## Extensions of JSqlParser releases
 
